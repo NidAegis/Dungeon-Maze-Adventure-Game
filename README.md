@@ -1,55 +1,66 @@
 \# 地城迷宮冒險遊戲 Dungeon Maze Adventure Game
 
 ## 如何執行
-
-本程式建議在 Windows 環境執行，並需要先安裝 GCC / MinGW。
+本程式建議在 Windows 環境執行，並需要先安裝 GCC。
 
 ---
 
-## 1. 開啟專案資料夾
+## 1. 安裝 GCC
 
-用 VS Code 或終端機進入本專案資料夾。
+開啟 CMD，輸入：
 
-例如：
+```cmd
+winget install MSYS2.MSYS2
+```
 
-```powershell
-cd Downloads\Dungeon-Maze-Adventure-Game-main
+安裝完成後，開啟「MSYS2 UCRT64」，輸入：
+
+```bash
+pacman -S mingw-w64-ucrt-x86_64-gcc
+```
+
+接著將以下路徑加入 Windows 環境變數 Path：
+
+```text
+C:\msys64\ucrt64\bin
+```
+
+重新開啟 CMD 後，輸入以下指令確認是否安裝成功：
+
+```cmd
+gcc --version
+```
+
+如果有顯示版本資訊，代表安裝成功。
+
+---
+
+## 2. 進入專案資料夾
+
+```cmd
+cd C:\Users\你的使用者名稱\Downloads\Dungeon-Maze-Adventure-Game-main
 ```
 
 ---
 
-## 2. 編譯程式
+## 3. 編譯程式
 
-請輸入以下指令：
-
-```powershell
+```cmd
 gcc -std=c99 -finput-charset=UTF-8 -fexec-charset=UTF-8 "dungeon_maze_adventure.c" -o dungeon_maze_adventure.exe
 ```
 
 ---
 
-## 3. 執行程式
+## 4. 開新視窗執行遊戲
 
-如果要直接在目前終端機執行：
-
-```powershell
-chcp 65001
-.\dungeon_maze_adventure.exe
-```
-
-如果要像 Dev-C++ 一樣開新視窗執行：
-
-```powershell
+```cmd
 cmd /c start "Dungeon Maze Adventure" cmd /k "chcp 65001 >nul && dungeon_maze_adventure.exe"
 ```
-
----
 
 ## 注意事項
 
 - 請使用英文輸入法操作遊戲。
-- 如果中文顯示亂碼，請確認有先輸入 `chcp 65001`。
-- 如果編譯失敗，請確認電腦已安裝 GCC / MinGW。
+- 如果出現 `gcc 不是內部或外部命令`，代表 GCC 尚未安裝或 Path 尚未設定。
 
 
 本專題使用 C 語言製作文字介面的地城迷宮冒險遊戲，玩家需要在迷宮中移動、探索、避開危險並完成遊戲目標。
