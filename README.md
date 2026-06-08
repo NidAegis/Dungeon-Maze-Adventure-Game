@@ -38,6 +38,8 @@ gcc --version
 ## 2. 進入專案資料夾
 
 ```cmd
+cd (資料夾位置)
+ex.
 cd C:\Users\你的使用者名稱\Downloads\Dungeon-Maze-Adventure-Game-main
 ```
 
